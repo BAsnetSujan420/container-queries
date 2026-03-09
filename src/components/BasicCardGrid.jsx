@@ -7,6 +7,8 @@ const CardWrapper = styled.section``;
 
 const H1 = styled.h1``;
 
+const Text = styled.p``;
+
 const Card = styled.article`
   background: white;
   color: black;
@@ -14,6 +16,8 @@ const Card = styled.article`
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
+
+  container-type: inline-size;
 `;
 
 const CardImage = styled.img`
@@ -25,6 +29,12 @@ const CardImage = styled.img`
 const CardBody = styled.div`
   padding: 16px;
   padding-top: 8px;
+  display: grid;
+  gap: 1rem;
+
+  @container (width > 45ch) {
+    grid-template-columns: auto minmax(25ch, 1fr);
+  }
 `;
 
 const CardTitle = styled.h3`
@@ -40,6 +50,18 @@ export default function BasicCardGrid() {
   return (
     <Wrapper>
       <H1>Media queries and container queries</H1>
+      <Text>
+        The morning air carried a quiet stillness as the sun slowly pushed
+        through the clouds, casting soft light across the rooftops and empty
+        streets. Somewhere in the distance, a dog barked and a bicycle rolled
+        past, its wheels echoing faintly against the pavement.
+      </Text>
+      <Text>
+        Moments like this felt suspended in time, where the world seemed to
+        pause just long enough for people to notice the small details—the
+        rustling of leaves, the warmth of sunlight, and the calm rhythm of an
+        ordinary day beginning.
+      </Text>
       <CardWrapper>
         <Card>
           <CardTitle>Card 1</CardTitle>
