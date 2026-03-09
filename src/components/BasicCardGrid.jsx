@@ -10,7 +10,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const CardWrapper = styled.section``;
+const CardWrapper = styled.section`
+  display: grid;
+  gap: 1rem;
+`;
 
 const Content = styled.section``;
 
@@ -24,9 +27,8 @@ const Card = styled.article`
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  margin-bottom: 1rem;
 
-  container-type: inline-size;
+  container: cards / inline-size;
 `;
 
 const CardImage = styled.img`
@@ -41,13 +43,14 @@ const CardBody = styled.div`
   display: grid;
   gap: 1rem;
 
-  @container (width > 45ch) {
+  @container cards (width > 45ch) {
     grid-template-columns: auto minmax(25ch, 1fr);
   }
 `;
 
 const CardTitle = styled.h3`
   margin-top: 8px;
+  font-size: clamp(1.5rem, 7cqi, 2rem);
 `;
 
 const CardText = styled.p`
@@ -72,6 +75,18 @@ export default function BasicCardGrid() {
           rustling of leaves, the warmth of sunlight, and the calm rhythm of an
           ordinary day beginning.
         </Text>
+        <Card>
+          <CardTitle>Main Card</CardTitle>
+          <CardBody>
+            <CardImage src="https://picsum.photos/400/300?0" />
+            <CardText>
+              Dawn unfolded like a quiet poem, spilling amber light across the
+              sleeping earth as the sky softened from indigo to gold. The breeze
+              wandered gently through the trees, carrying the faint perfume of
+              damp soil and blooming petals.
+            </CardText>
+          </CardBody>
+        </Card>
       </Content>
       <CardWrapper>
         <Card>
