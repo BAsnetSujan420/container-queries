@@ -1,9 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: grid;
+  gap: 1rem;
+
+  @media (width > 760px) {
+    grid-template-columns: 1fr 300px;
+  }
+`;
 
 const CardWrapper = styled.section``;
+
+const Content = styled.section``;
 
 const H1 = styled.h1``;
 
@@ -49,19 +58,21 @@ const CardText = styled.p`
 export default function BasicCardGrid() {
   return (
     <Wrapper>
-      <H1>Media queries and container queries</H1>
-      <Text>
-        The morning air carried a quiet stillness as the sun slowly pushed
-        through the clouds, casting soft light across the rooftops and empty
-        streets. Somewhere in the distance, a dog barked and a bicycle rolled
-        past, its wheels echoing faintly against the pavement.
-      </Text>
-      <Text>
-        Moments like this felt suspended in time, where the world seemed to
-        pause just long enough for people to notice the small details—the
-        rustling of leaves, the warmth of sunlight, and the calm rhythm of an
-        ordinary day beginning.
-      </Text>
+      <Content>
+        <H1>Media queries and container queries</H1>
+        <Text>
+          The morning air carried a quiet stillness as the sun slowly pushed
+          through the clouds, casting soft light across the rooftops and empty
+          streets. Somewhere in the distance, a dog barked and a bicycle rolled
+          past, its wheels echoing faintly against the pavement.
+        </Text>
+        <Text>
+          Moments like this felt suspended in time, where the world seemed to
+          pause just long enough for people to notice the small details—the
+          rustling of leaves, the warmth of sunlight, and the calm rhythm of an
+          ordinary day beginning.
+        </Text>
+      </Content>
       <CardWrapper>
         <Card>
           <CardTitle>Card 1</CardTitle>
