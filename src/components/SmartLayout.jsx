@@ -61,6 +61,8 @@ const Grid = styled.div`
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
+
+  container: grid-auto-fit / inline-size;
 `;
 
 const Card = styled.article`
@@ -88,8 +90,21 @@ const Card = styled.article`
     margin-block-end: 1rem;
   }
 
-  &:has (> img) {
+  &:first-child {
     border: 2px solid var(--clr-primary-300);
+
+    @container grid-auto-fit (inline-size > calc(30ch * 2 + 1rem)) {
+      grid-column: span 2;
+
+      display: grid;
+      grid-template-columns: subgrid;
+      gap: 0;
+
+      > img {
+        grid-column: 2;
+        grid-row: 1/4;
+      }
+    }
   }
 `;
 
