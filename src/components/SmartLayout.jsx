@@ -90,7 +90,7 @@ const Card = styled.article`
     margin-block-end: 1rem;
   }
 
-  &:first-child {
+  &:has(> img) {
     border: 2px solid var(--clr-primary-300);
 
     @container grid-auto-fit (inline-size > calc(30ch * 2 + 1rem)) {
@@ -103,6 +103,16 @@ const Card = styled.article`
       > img {
         grid-column: 2;
         grid-row: 1/4;
+      }
+    }
+
+    @container grid-auto-fit (inline-size > calc(30ch * 3 + 2rem)) {
+      grid-column: span 1;
+      grid-row: span 2;
+
+      > img {
+        grid-column: 1;
+        grid-row: 1;
       }
     }
   }
