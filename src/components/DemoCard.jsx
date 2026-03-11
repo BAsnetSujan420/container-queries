@@ -10,6 +10,8 @@ const Page = styled.div`
 `;
 
 const CardContainer = styled.div`
+  container-type: inline-size;
+  container-name: product-card-container;
   width: 100%;
   max-width: 640px;
 `;
@@ -18,6 +20,23 @@ const Card = styled.div`
   padding: 1rem;
   border: 3px solid var(--btn-bg);
   text-align: center;
+
+  @container (min-width: 200px) {
+    padding: 1rem 1rem 2rem;
+    border: 5px solid var(--btn-bg);
+    text-align: left;
+  }
+
+  @container (min-width: 250px) {
+    border: 11px solid var(--btn-bg);
+  }
+
+  @container product-card-container (min-width: 400px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
 `;
 
 const Image = styled.img`
@@ -31,6 +50,14 @@ const Title = styled.h3`
   text-transform: uppercase;
   color: magenta;
   font-size: 1rem;
+
+  @container (min-width: 200px) {
+    font-size: 1.25rem;
+  }
+
+  @container (min-width: 250px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Price = styled.span`
@@ -38,11 +65,26 @@ const Price = styled.span`
   margin: 1rem 0;
   font-style: italic;
   color: #00b371;
+
+  @container (min-width: 200px) {
+    font-size: 1rem;
+  }
+
+  @container (min-width: 250px) {
+    font-size: 1.25rem;
+  }
 `;
 
-const Desc = styled.p``;
+const Desc = styled.p`
+  display: none;
+
+  @container (min-width: 200px) {
+    display: block;
+  }
+`;
 
 const ButtonContainer = styled.div`
+  container-type: inline-size;
   width: 100%;
 `;
 
@@ -53,6 +95,18 @@ const CartButton = styled.button`
   max-width: 60px;
   height: 3rem;
   border-radius: 10px;
+
+  @container (min-width: 100px) {
+    padding: 0 1rem;
+    display: grid;
+    max-width: 120px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @container (min-width: 220px) {
+    max-width: 260px;
+    grid-template-columns: 1fr 3fr;
+  }
 `;
 
 const CartIcon = styled.svg`
@@ -73,6 +127,22 @@ const CartIcon = styled.svg`
     stroke: var(--text);
     fill: none;
   }
+
+  .cart-lines-group {
+    display: none;
+  }
+
+  @container (min-width: 30px) {
+    .cart-lines-group {
+      display: block;
+    }
+  }
+
+  @container (min-width: 220px) {
+    .plus-group > line {
+      display: block;
+    }
+  }
 `;
 
 const CartText = styled.p`
@@ -85,6 +155,19 @@ const CartText = styled.p`
   .add,
   .to-cart {
     display: none;
+  }
+
+  @container (min-width: 100px) {
+    .add {
+      display: inline-block;
+    }
+  }
+
+  @container (min-width: 220px) {
+    .plus-group,
+    .to-cart {
+      display: inline-block;
+    }
   }
 `;
 
