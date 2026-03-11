@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const CardContainer = styled.div``;
+export const CardContainer = styled.div`
+  container-type: inline-size;
+`;
 
 export const Card = styled.div`
   display: grid;
@@ -12,6 +14,16 @@ export const Card = styled.div`
   margin: 0 auto;
   border: 1px solid hsl(278deg 66% 66%);
   padding: 1rem;
+
+  @container (inline-size < 650px) {
+    gap: 1rem;
+  }
+
+  @container (inline-size < 460px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.5rem;
+  }
 `;
 
 export const CardBody = styled.div``;
@@ -32,6 +44,10 @@ export const LinksContainer = styled.div`
   a {
     color: hsl(278deg 66% 66%);
   }
+
+  @container (inline-size < 850px) {
+    display: none;
+  }
 `;
 
 export const LinksTitle = styled.h3`
@@ -40,15 +56,30 @@ export const LinksTitle = styled.h3`
   text-transform: uppercase;
   margin: 1rem 0 0.25rem;
   line-height: 1;
+  text-align: left;
 `;
 
 export const Time = styled.span`
   font-size: 1.5rem;
   font-weight: 300;
+
+  @container (inline-size < 850px) {
+    font-size: 1.25rem;
+  }
+  @container (inline-size < 300px) {
+    font-size: 1.5rem;
+  }
+  @container (inline-size < 300px) {
+    display: none;
+  }
 `;
 
 export const Desc = styled.p`
   text-align: left;
+
+  @container (inline-size < 650px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.h2`
@@ -56,6 +87,13 @@ export const Title = styled.h2`
   font-weight: 400;
   line-height: 1;
   margin-block: 1rem;
+
+  @container (inline-size < 850px) {
+    font-size: 2.2rem;
+  }
+  @container (inline-size < 650px) {
+    font-size: 2rem;
+  }
 `;
 
 const Image = styled.figure`
@@ -77,6 +115,11 @@ const Button = styled.button`
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin-top: 1rem;
+
+  @container (inline-size < 460px) {
+    display: block;
+    margin: 1rem auto 0;
+  }
 `;
 
 function EpisodeCard() {
