@@ -57,6 +57,12 @@ const Product = styled.div`
   container-type: inline-size;
 `;
 
+const Details = styled.div`
+  @container (inline-size > 350px) {
+    text-align: left;
+  }
+`;
+
 const ProductContainer = styled.div`
   h3 {
     font-size: 14px;
@@ -90,6 +96,38 @@ const ProductContainer = styled.div`
     margin: 1rem auto;
     display: block;
   }
+
+  @container (inline-size < 200px) {
+    border: 1px solid hsl(340deg 50% 50%);
+    padding: 0.5rem;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    h3 {
+      width: 90px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin: 0;
+    }
+
+    p,
+    button {
+      display: none;
+    }
+  }
+
+  @container (inline-size > 350px) {
+    display: flex;
+    padding: 0.5rem 0 0;
+    justify-content: flex-start;
+
+    button {
+      margin-left: 1rem;
+    }
+  }
 `;
 
 export default function ProductGrid() {
@@ -110,7 +148,7 @@ function ProductCard({ image, title, price, small }) {
           <img src={image} />
         </figure>
 
-        <div>
+        <Details>
           <h3>{title}</h3>
           <span className="price">{price}</span>
           <p>
@@ -118,7 +156,7 @@ function ProductCard({ image, title, price, small }) {
             talks about plant care.
           </p>
           <button>Add to Cart</button>
-        </div>
+        </Details>
       </ProductContainer>
     </Product>
   );
