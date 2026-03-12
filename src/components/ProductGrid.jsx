@@ -140,6 +140,12 @@ const FooterContainer = styled.footer`
     margin: 0;
     margin-bottom: 0.5rem;
   }
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    h4 {
+      display: none;
+    }
+  }
 `;
 
 const FooterContent = styled.div`
@@ -204,6 +210,11 @@ const Copyright = styled.div`
 
   grid-column: 1 / -1;
   border-top: 1px solid;
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    grid-column: auto;
+    border-top: none;
+  }
 `;
 
 export default function ProductGrid() {
