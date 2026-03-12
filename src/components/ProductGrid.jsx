@@ -130,13 +130,121 @@ const ProductContainer = styled.div`
   }
 `;
 
+const FooterContainer = styled.footer`
+  background: #1f1f1f;
+  color: #fff;
+  padding: 3rem 2rem 1.5rem;
+
+  h4,
+  h2 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+`;
+
+const FooterContent = styled.div`
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+`;
+
+const Brand = styled.div`
+  p {
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+`;
+
+const Links = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  @media (max-width: 600px) {
+    gap: 1rem;
+  }
+
+  a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  a:hover {
+    color: white;
+  }
+`;
+
+const Social = styled.div``;
+
+const Icons = styled.div`
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: space-evenly;
+  margin-block: 1em;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    transform: scale(1.2);
+  }
+`;
+
+const Copyright = styled.div`
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: #aaa;
+
+  grid-column: 1 / -1;
+  border-top: 1px solid;
+`;
+
 export default function ProductGrid() {
   return (
-    <Layout>
-      {products.map((product) => (
-        <ProductCard key={product.name} {...product} />
-      ))}
-    </Layout>
+    <div>
+      <Layout>
+        {products.map((product) => (
+          <ProductCard key={product.name} {...product} />
+        ))}
+      </Layout>
+
+      <FooterContainer>
+        <FooterContent>
+          <Brand>
+            <h2>Brooklyn Garden</h2>
+            <p>Plants that make your home happier 🌿</p>
+          </Brand>
+
+          <Links>
+            <h4>Links</h4>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </Links>
+
+          <Social>
+            <h4>Follow Us</h4>
+            <Icons>
+              <a href="#">🐦</a>
+              <a href="#">📸</a>
+              <a href="#">📘</a>
+              <a href="#">▶️</a>
+            </Icons>
+          </Social>
+          <Copyright>
+            © {new Date().getFullYear()} Brooklyn Garden. All rights reserved.
+          </Copyright>
+        </FooterContent>
+      </FooterContainer>
+    </div>
   );
 }
 
