@@ -50,6 +50,16 @@ const Page = styled.div``;
 
 const Main = styled.main``;
 
+const HeroLayout = styled.div`
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 1080px) {
+    grid-template-columns: 44ch 1fr;
+    align-items: start;
+  }
+`;
+
 const Section = styled.section``;
 
 const Grid = styled.div`
@@ -130,76 +140,78 @@ export default function StyledFeaturedArticles() {
       <GlobalStyles />
       <Page>
         <Main>
-          <Heading>Smart design patterns with styled queries</Heading>
+          <HeroLayout>
+            <Heading>Smart design patterns with styled queries</Heading>
 
-          <Section>
-            <SubHeading>Featured Articles</SubHeading>
+            <Section>
+              <SubHeading>Featured Articles</SubHeading>
 
-            <Grid>
-              <Card>
-                <CardTitle>Color Theory in Interior Design</CardTitle>
-                <CardText>
-                  Discover the profound impact of color choices on mood and
-                  aesthetics in interior design.
-                </CardText>
-                <CardText>
-                  <CardLink href="#">Read more about color theory</CardLink>
-                </CardText>
-              </Card>
+              <Grid>
+                <Card>
+                  <CardTitle>Color Theory in Interior Design</CardTitle>
+                  <CardText>
+                    Discover the profound impact of color choices on mood and
+                    aesthetics in interior design.
+                  </CardText>
+                  <CardText>
+                    <CardLink href="#">Read more about color theory</CardLink>
+                  </CardText>
+                </Card>
 
-              <Card>
-                <CardTitle>Article title</CardTitle>
-                <CardText>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                </CardText>
-                <CardText>
-                  <CardLink href="#">Read more about XYZ</CardLink>
-                </CardText>
-              </Card>
-              <Card>
-                <CardTitle>Maximizing Small Spaces</CardTitle>
-                <CardText>
-                  Learn creative strategies to maximize small spaces.
-                </CardText>
-                <CardText>
-                  <CardLink href="#">
-                    Read more about maximizing spaces
-                  </CardLink>
-                </CardText>
-              </Card>
+                <Card>
+                  <CardTitle>Article title</CardTitle>
+                  <CardText>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </CardText>
+                  <CardText>
+                    <CardLink href="#">Read more about XYZ</CardLink>
+                  </CardText>
+                </Card>
+                <Card>
+                  <CardTitle>Maximizing Small Spaces</CardTitle>
+                  <CardText>
+                    Learn creative strategies to maximize small spaces.
+                  </CardText>
+                  <CardText>
+                    <CardLink href="#">
+                      Read more about maximizing spaces
+                    </CardLink>
+                  </CardText>
+                </Card>
 
-              <Card>
-                <CardTitle>Eco-Friendly Interiors</CardTitle>
-                <CardText>
-                  Explore how to create interiors using eco-friendly materials.
-                </CardText>
-                <CardText>
-                  <CardLink href="#">Read more about eco design</CardLink>
-                </CardText>
-              </Card>
-              <Card>
-                <CardTitle>Creating fluid layout</CardTitle>
-                <CardText>
-                  Learn to create fluid layouts with new min/max properties.
-                </CardText>
-                <CardText>
-                  <CardLink href="#">Read more about fluid layout</CardLink>
-                </CardText>
-              </Card>
-              <Card>
-                <CardTitle>Frontend Dev with AI</CardTitle>
-                <CardText>
-                  Learn to use artificial intelligence as frontend developer.
-                </CardText>
-                <CardText>
-                  <CardLink href="#">
-                    Read more about frontend AI engineering
-                  </CardLink>
-                </CardText>
-              </Card>
-            </Grid>
-          </Section>
-
+                <Card>
+                  <CardTitle>Eco-Friendly Interiors</CardTitle>
+                  <CardText>
+                    Explore how to create interiors using eco-friendly
+                    materials.
+                  </CardText>
+                  <CardText>
+                    <CardLink href="#">Read more about eco design</CardLink>
+                  </CardText>
+                </Card>
+                <Card>
+                  <CardTitle>Creating fluid layout</CardTitle>
+                  <CardText>
+                    Learn to create fluid layouts with new min/max properties.
+                  </CardText>
+                  <CardText>
+                    <CardLink href="#">Read more about fluid layout</CardLink>
+                  </CardText>
+                </Card>
+                <Card>
+                  <CardTitle>Frontend Dev with AI</CardTitle>
+                  <CardText>
+                    Learn to use artificial intelligence as frontend developer.
+                  </CardText>
+                  <CardText>
+                    <CardLink href="#">
+                      Read more about frontend AI engineering
+                    </CardLink>
+                  </CardText>
+                </Card>
+              </Grid>
+            </Section>
+          </HeroLayout>
           <Section>
             <SubHeading>Some other content that follows</SubHeading>
             <Grid>
