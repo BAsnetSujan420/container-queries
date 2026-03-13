@@ -48,7 +48,10 @@ export const GlobalStyles = createGlobalStyle`
 
 const Page = styled.div``;
 
-const Main = styled.main``;
+const Main = styled.main`
+  --overflow-grid-direction: column;
+  --overflow-grid-column-size: 100%;
+`;
 
 const HeroLayout = styled.div`
   display: grid;
@@ -57,10 +60,13 @@ const HeroLayout = styled.div`
   @media (min-width: 1080px) {
     grid-template-columns: 44ch 1fr;
     align-items: start;
+    --overflow-grid-direction: row;
   }
 `;
 
-const Section = styled.section``;
+const Section = styled.section`
+  container-type: inline-size;
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -68,19 +74,21 @@ const Grid = styled.div`
 
   grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
 
-  @media (max-width: 1220px) {
-    grid-auto-flow: column;
+  @container (max-width: 980px) {
+    grid-auto-flow: var(--overflow-grid-direction);
     grid-auto-columns: minmax(min(30ch, 100%), 1fr);
     grid-template-columns: none;
-
     overflow-x: auto;
     padding-bottom: 0.5rem;
-
     scroll-snap-type: x mandatory;
 
     > * {
       scroll-snap-align: start;
     }
+  }
+  @container style(--overflow-grid-direction: row) {
+    grid-template-columns: 1fr;
+    max-height: 50vh;
   }
 `;
 
