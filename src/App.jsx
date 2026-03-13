@@ -4,6 +4,7 @@ import FeaturedArticles from './components/SmartLayout';
 import DemoCard from './components/DemoCard';
 import EpisodeCard from './components/EpisodeCard';
 import ProductGrid from './components/ProductGrid';
+import StyledFeatureArticles from './components/SmarterLayout';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <FeaturedArticles /> */}
       {/* <DemoCard /> */}
       {/* <EpisodeCard /> */}
-      <ProductGrid />
+      {/* <ProductGrid /> */}
+      <StyledFeatureArticles />
     </>
   );
 }
